@@ -1,11 +1,12 @@
 const express = require('express');
-const {authController} = require('./controllers/authController');
-const { sendText } = require('./controllers/sendText');
+const { deleteAll } = require('./controllers/user/deleteAll');
+const {authController} = require('./controllers/user/registerUser');
+const { findAll } = require('./controllers/user/findAll');
+
 const router = express.Router();
 
-
-router.post('/register',authController)
-router.get('/text',sendText)
-
+router.post('/user/register',authController);
+router.get('/user/findAll',findAll);
+router.delete('/user/deleteAll',deleteAll);
 
 module.exports = router;
