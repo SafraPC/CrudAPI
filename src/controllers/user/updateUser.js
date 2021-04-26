@@ -7,7 +7,7 @@ const updateOne = async (req, res) => {
     await user.updateOne(req.body);
     res.json(user);
   } catch (error) {
-    res.json({ error: "Error When Update User" , that: error.message});
+    res.json({ error: error.message,message: "Error When Update User" });
   }
 };
 

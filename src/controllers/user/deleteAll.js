@@ -5,7 +5,7 @@ try{
     const users = await User.deleteMany();
      res.json(users.deletedCount);
 }catch(error){
-     res.json({error:"Error in Delete All Users"});
+     res.json({error: error.message,message: "Error When Delete All User"});
 }
 };
 

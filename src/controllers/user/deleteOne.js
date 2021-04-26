@@ -6,7 +6,7 @@ const deleteOne = async (req, res) => {
     const users = await User.findByIdAndDelete(userId);
     res.json(users.deletedCount);
   } catch (error) {
-    res.json({ error: "Error in Delete One of Users" });
+    res.json({ error: error.message,message: "Error when Delete One of User"  });
   }
 };
 

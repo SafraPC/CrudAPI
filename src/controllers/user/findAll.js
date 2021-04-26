@@ -5,7 +5,7 @@ try{
     const users = await User.find();
      res.json(users);
 }catch(error){
-     res.json({error:"Error in User´s Search"});
+     res.json({error: error.message,message: "Error When Searcb User"});
 }
 };
 

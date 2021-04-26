@@ -6,7 +6,7 @@ const findOne = async (req, res) => {
     const users = await User.findById(userId);
     res.json(users);
   } catch (error) {
-    res.json({ error: "Error When Search User" });
+    res.json({error: error.message,message: "Error When Search User" });
   }
 };
 
