@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended:false}));
 
 await connection();
 app.use(router)
-app.listen(3000,()=>{
+app.listen(8080,()=>{
     console.log('Server is Running')
 });
 })()
