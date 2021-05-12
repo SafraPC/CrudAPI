@@ -17,17 +17,17 @@ const WorkWithUs = new mongoose.Schema({
         lowercase: true,
     },
     state: {
-        type: Object,
+        type: String,
         required: true,
         lowecase: true
     },
     city: {
-        type: Object,
+        type: String,
         required: true,
         lowecase: true
     },
-    file:{
-        type:Object,
+    cv:{
+        type:String,
         required:true
     }
  

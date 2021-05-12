@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer');
 const { deleteAll } = require('./controllers/user/deleteAll');
 const {authController} = require('./controllers/user/registerUser');
 const { findAll } = require('./controllers/user/findAll');
@@ -6,10 +7,12 @@ const {deleteOne} = require('./controllers/user/deleteOne');
 const { findOne } = require('./controllers/user/findOne');
 const { updateOne } = require('./controllers/user/updateUser');
 const { registerWorkWithUs } = require('./controllers/proposals/registerCV');
+const multerConfig = require('./config/multer')
+
 const router = express.Router();
 
 //Work With Us
-router.put('/work_with_us',registerWorkWithUs);
+router.put('/work_with_us',multer(multerConfig).single("cv"),registerWorkWithUs);
 
 
 //User´s Props Routes
