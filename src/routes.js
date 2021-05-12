@@ -5,7 +5,11 @@ const { findAll } = require('./controllers/user/findAll');
 const {deleteOne} = require('./controllers/user/deleteOne');
 const { findOne } = require('./controllers/user/findOne');
 const { updateOne } = require('./controllers/user/updateUser');
+const { registerWorkWithUs } = require('./controllers/proposals/registerCV');
 const router = express.Router();
+
+//Work With Us
+router.put('/work_with_us',registerWorkWithUs);
 
 
 //User´s Props Routes
