@@ -14,8 +14,10 @@ try{
 
 const countWorksOportunities = async(req,res)=>{
      try {
+          //Will return all data of this collection
+          // const total = await WorkWithUs.find({}).lean(); 
           const total = await WorkWithUs.count();
-          res.json({totalProposals : total});  
+          res.json({total : total});  
      } catch (error) {
           res.json({error:error.message, message:"Cannot get Workers Count"})
      }
