@@ -11,6 +11,7 @@ const {
   countWorksOportunities,
 } = require("./controllers/workWithUs/registerCV");
 const multerConfig = require("./config/multer");
+const { registerContact } = require("./controllers/contact/registerContact");
 
 const router = express.Router();
 
@@ -22,7 +23,10 @@ router.put(
 );
 router.get("/work_with_us", countWorksOportunities);
 
-//User´s Props Routes
+//Contact´s Router Props
+router.post("/contact", registerContact);
+
+//User´s Props Router Props
 router.get("/user", findAll);
 router.get("/user/:id", findOne);
 router.post("/user/register", authController);
