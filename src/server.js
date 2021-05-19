@@ -9,7 +9,6 @@ const cors = require("cors");
   app.use(cors());
   app.use(express.urlencoded({ extended: false }));
   await connection();
-  app.use(express.json());
   app.use(router);
   app.use("/uploads", express.static(path.resolve(__dirname, "..", "uploads")));
   app.listen(8080, () => {
